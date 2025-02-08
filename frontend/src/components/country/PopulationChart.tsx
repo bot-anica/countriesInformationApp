@@ -13,7 +13,6 @@ import {
 import { IPopulationData } from '../../interfaces/ICountry';
 import { MESSAGES, CHART_COLORS } from '../../constants';
 
-// Register ChartJS components
 ChartJS.register(
   CategoryScale,
   LinearScale,

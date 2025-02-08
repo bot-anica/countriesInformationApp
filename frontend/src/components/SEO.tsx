@@ -18,7 +18,7 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const siteTitle = 'Country Info App';
   const fullTitle = `${title} | ${siteTitle}`;
-  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const baseUrl = window.location.origin;
   const currentUrl = url ? `${baseUrl}${url}` : baseUrl;
   const defaultImage = `${baseUrl}/og-image.jpg`;
 

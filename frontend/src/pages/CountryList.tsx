@@ -11,7 +11,6 @@ import SEO from '../components/SEO';
 import { getWhiteOpacity } from '../theme/utils';
 import { ROUTES } from '../constants';
 
-// Create a memoized country card component
 const CountryCard = React.memo(({ 
   countryCode, 
   name, 
