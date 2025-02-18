@@ -1,23 +1,19 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { ICountryInfo } from './interfaces/ICountryInfo';
-import axios from 'axios';
+
 import { ICountry } from './interfaces/ICountry';
+import { ICountryInfo } from './interfaces/ICountryInfo';
 import { DateNagerApiService } from './services/date-nager-api.service';
 import { CountriesNowApiService } from './services/countries-now-api.service';
 
 @Injectable()
 export class CountriesService {
   constructor(
-    private readonly configService: ConfigService,
     private readonly dateNagerApi: DateNagerApiService,
     private readonly countriesNowApi: CountriesNowApiService,
   ) {}
 
   async getAvailableCountries(): Promise<ICountry[]> {
-    const baseUrl = this.configService.get<string>('dateNagerApiUrl');
-    const response = await axios.get(`${baseUrl}/AvailableCountries`);
-    return response.data;
+    return await this.dateNagerApi.getAvailableCountries();
   }
 
   async getCountryInfo(countryCode: string): Promise<ICountryInfo> {
@@ -38,4 +34,4 @@ export class CountriesService {
       throw new NotFoundException(`Country with code ${countryCode} not found`);
     }
   }
-} 
+}

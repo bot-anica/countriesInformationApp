@@ -8,10 +8,6 @@ import { CountriesNowApiService } from './services/countries-now-api.service';
 @Module({
   imports: [ConfigModule],
   controllers: [CountriesController],
-  providers: [
-    CountriesService,
-    DateNagerApiService,
-    CountriesNowApiService,
-  ],
+  providers: [CountriesService, DateNagerApiService, CountriesNowApiService],
 })
-export class CountriesModule {} 
+export class CountriesModule {}

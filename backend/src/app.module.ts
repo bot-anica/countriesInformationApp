@@ -12,4 +12,4 @@ import configuration from './config/configuration';
     CountriesModule,
   ],
 })
-export class AppModule {} 
+export class AppModule {}
