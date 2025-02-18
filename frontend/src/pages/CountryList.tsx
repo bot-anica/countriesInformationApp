@@ -11,13 +11,13 @@ import SEO from '../components/SEO';
 import { getWhiteOpacity } from '../theme/utils';
 import { ROUTES } from '../constants';
 
-const CountryCard = React.memo(({ 
-  countryCode, 
-  name, 
-  onNavigate 
-}: { 
-  countryCode: string; 
-  name: string; 
+const CountryCard = React.memo(({
+  countryCode,
+  name,
+  onNavigate
+}: {
+  countryCode: string;
+  name: string;
   onNavigate: (code: string) => void;
 }) => (
   <div
@@ -77,7 +77,7 @@ const CountryList: React.FC = () => {
 
   return (
     <>
-      <SEO 
+      <SEO
         title="Countries List"
         description="Explore information about countries around the world, including population data and geographical details."
         url="/"
@@ -87,7 +87,7 @@ const CountryList: React.FC = () => {
           <span className="font-black">Country Info </span>
           <span className="font-light">App</span>
         </h1>
-        
+
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3 xs:gap-4 sm:gap-6">
           {renderedCountries}
         </div>
@@ -96,4 +96,4 @@ const CountryList: React.FC = () => {
   );
 };
 
-export default CountryList; 
+export default CountryList;
